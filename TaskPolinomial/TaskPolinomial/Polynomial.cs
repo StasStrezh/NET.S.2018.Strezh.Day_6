@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,15 +6,28 @@ using System.Threading.Tasks;
 
 namespace TaskPolinomial
 {
+    /// <summary>
+    /// Polynomial class
+    /// </summary>
     public sealed class Polynomial
     {
+        /// <summary>
+        /// Constant epsilon
+        /// </summary>
         private const double eps = double.Epsilon;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="index"></param>
         public Polynomial(double[] index)
         {
             this.Index = index;
         }
 
+        /// <summary>
+        /// Order property
+        /// </summary>
         public int Order
         {
             get
@@ -160,6 +173,13 @@ namespace TaskPolinomial
             return polinomial / multiplier;
         }
 
+        /// <summary>
+        /// Overload of ==
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
+
         public static bool operator ==(Polynomial first, Polynomial second)
         {
             if (first.Index.Length != second.Index.Length)
@@ -176,6 +196,12 @@ namespace TaskPolinomial
             return true;
         }
 
+        /// <summary>
+        /// Overload of !=
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
         public static bool operator !=(Polynomial first, Polynomial second)
         {
             return !(first == second);
